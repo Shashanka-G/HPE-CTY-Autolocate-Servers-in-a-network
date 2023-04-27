@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+
+<body>
+    <table>
+
+        <thead>
+            <tr>
+                <th>Sl No</th>
+                <th>Server Vendor</th>
+                <th>Server Model</th>
+                <th>Server SerialNumber</th>
+                <th>Server IP</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for device in devices %}
+            <tr>
+                <td><strong>{{ device[0] }}</strong></td>
+                <td>{{ device[1] }}</td>
+                <td>{{ device[2] }} </td>
+                <td>{{ device[3] }}</td>
+                <td>{{ device[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+</body>
+
+<script>
+    setTimeout(function () {
+        location.reload();
+    }, 2000);
+</script>
+
+</html>
